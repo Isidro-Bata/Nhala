@@ -9,5 +9,7 @@
  * @author kiDDing
  */
 public class Kendze {
-    
+    public static void main(String []args){
+        System.out.println("Anima");
+    }
 }
