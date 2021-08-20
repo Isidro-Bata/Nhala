@@ -7,6 +7,19 @@ public class Kendze {
         BufferedReader ler = new BufferedReader(new InputStreamReader(System.in));
         byte op, op1;
         
+        char formal;
+        short qtdFormal;
+        float rendaFormal;
+        
+        char informal;
+        short qtdInformal;
+        float valorInformal;
+        
+        char semiInformal;
+        short qtdSemiInformal;
+        float taxaSemiInformal;
+        
+        final byte TAXALIXO = 20;
         
         do {
             System.out.println("1. Mercados");
