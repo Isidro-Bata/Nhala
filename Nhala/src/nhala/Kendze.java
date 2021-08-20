@@ -50,9 +50,28 @@ public class Kendze {
                     
                     switch(op1) {
                         case 1:
-                            
+                           
                         break;
                         case 2:
+                            
+                            informal = 'I';
+                
+                            System.out.println("Informe a Qtd. de vendedores: ");
+                            do {
+                                qtdInformal = Short.parseShort(ler.readLine());
+                                if(qtdInformal < 0 || qtdInformal > 32768)
+                                    System.out.println("Informe correctamente a opcao.");
+                                
+                            }while(qtdInformal < 0 || qtdInformal > 32768);
+                        
+                            System.out.println("Informe o valor a ser pago por cada vendedor: ");
+                            do {
+                                valorInformal = Float.parseFloat(ler.readLine());
+                                if(valorInformal < 0.0f )
+                                    System.out.println("Informe correctamente a opcao.");
+                                
+                            }while(valorInformal < 0.0f);
+                            
                             
                         break;
                         case 3:
