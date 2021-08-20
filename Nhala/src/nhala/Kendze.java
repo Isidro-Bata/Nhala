@@ -92,6 +92,25 @@ public class Kendze {
                         break;
                         case 3:
                             
+                            semiInformal = 'S';
+                            
+                            System.out.print("Informe a Qtd. bancas: ");
+                            do {
+                                qtdSemiInformal = Short.parseShort(ler.readLine());
+                                
+                                if(qtdSemiInformal < 0 || qtdSemiInformal > 32768)
+                                    System.out.println("Informe correctamente a quantidade");
+                            }while( qtdSemiInformal < 0 || qtdSemiInformal > 32768);
+                            
+                            
+                            System.out.print("Informe a Taxa: ");
+                            do {
+                                taxaSemiInformal = Float.parseFloat(ler.readLine());
+                                
+                                if(taxaSemiInformal < 0)
+                                    System.out.println("Informe correctamente a taxa");
+                            }while(taxaSemiInformal < 0);
+                            
                         break;
                     }
                     
