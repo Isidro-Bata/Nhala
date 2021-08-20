@@ -50,7 +50,21 @@ public class Kendze {
                     
                     switch(op1) {
                         case 1:
+                            System.out.print("Informe a quantidade de vendedores: ");
+                            do {
+                                qtdFormal = Short.parseShort(ler.readLine());
+                                
+                                if(qtdFormal < 0 || qtdFormal > 32768)
+                                    System.out.println("Informe correctamente a quantidade.");
+                            }while(qtdFormal < 0 || qtdFormal > 32768);
                             
+                            System.out.print("Informe a renda de de Aluguer: ");
+                            do {
+                                rendaFormal = Float.parseFloat(ler.readLine());
+                            
+                                if(rendaFormal < 0)
+                                    System.out.println("Informe correctamente a  renda");
+                            }while(rendaFormal < 0);
                         break;
                         case 2:
                             
