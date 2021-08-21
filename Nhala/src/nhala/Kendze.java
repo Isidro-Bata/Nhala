@@ -89,7 +89,6 @@ public class Kendze {
                         break;
                         case 3:
                             
-                            semiInformal = 'S';
                             
                             System.out.print("Informe a Qtd. bancas: ");
                             do {
