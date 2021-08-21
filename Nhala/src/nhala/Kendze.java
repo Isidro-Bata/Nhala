@@ -10,14 +10,17 @@ public class Kendze {
         char formal;
         short qtdFormal;
         float rendaFormal;
+        float totalFormal;
         
         char informal;
         short qtdInformal;
         float valorInformal;
+        float totalInformal;
         
         char semiInformal;
         short qtdSemiInformal;
         float taxaSemiInformal;
+        float totalSemiInformal;
         
         final byte TAXALIXO = 20;
         
@@ -67,6 +70,10 @@ public class Kendze {
                                 if(rendaFormal < 0)
                                     System.out.println("Informe correctamente a  renda");
                             }while(rendaFormal < 0);
+                            
+                            totalFormal = qtdFormal*rendaFormal + qtdFormal*TAXALIXO;
+                            
+                            System.out.println(totalFormal + " " + qtdFormal + " " + rendaFormal);
                         break;
                         case 2:
                             
@@ -88,7 +95,7 @@ public class Kendze {
                                 
                             }while(valorInformal < 0.0f);
                             
-                            
+                            totalInformal = qtdInformal*valorInformal + qtdInformal*TAXALIXO;
                         break;
                         case 3:
                             
@@ -111,6 +118,7 @@ public class Kendze {
                                     System.out.println("Informe correctamente a taxa");
                             }while(taxaSemiInformal < 0);
                             
+                            totalSemiInformal = qtdSemiInformal*taxaSemiInformal + qtdSemiInformal*TAXALIXO;
                         break;
                     }
                     
