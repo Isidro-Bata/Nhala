@@ -1,10 +1,14 @@
 package nhala;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.text.DecimalFormat;
 
-import java.io.*;
 
 public class Kendze {
     public static void main(String []args) throws IOException {
         BufferedReader ler = new BufferedReader(new InputStreamReader(System.in));
+        DecimalFormat mt = new DecimalFormat("###,###,###.00 MT");
         byte op, op1;
         
         char formal = 'F';
@@ -135,34 +139,34 @@ public class Kendze {
                                 System.out.printf("%-10s%-10s%-25s%-20s%-19s |\n", "| Mercado","| Qde","| Valor por Unidade","| Taxa de Lixo", "| Valor Total");
                                 System.out.printf("%8s%10s%10s%s%s\n", "==============","===========","==========================",
                                         "======================", "=============");
-                                System.out.printf("|%5s%5s%5d%5s%14.2f%11s%17d%3s%17.2f  |\n", formal, " |", qtdFormal, " |", rendaFormal,
-                                                " |", TAXALIXO, " |", 0000.00);
+                                System.out.printf("|%5s%5s%5d%5s%14.2f%11s%17d%3s%17s  |\n", formal, " |", qtdFormal, " |", rendaFormal,
+                                                " |", TAXALIXO, " |", mt.format(444));
                                 System.out.printf("%8s%10s%10s%s%s\n", "==============","===========","==========================",
                                         "======================", "=============");
                                 System.out.println("\n");
                                 break;
                             case 2:
-                                System.out.println("=== INFORMAL ===");
+                                System.out.println("\t=== INFORMAL ===");
                                 System.out.printf("\n%8s%10s%10s%s%s\n", "==============","===========","==========================",
                                         "======================", "=============");
                                 System.out.printf("%-10s%-10s%-25s%-20s%-19s |\n", "| Mercado","| Qde","| Valor por Unidade","| Taxa de Lixo", "| Valor Total");
                                 System.out.printf("%8s%10s%10s%s%s\n", "==============","===========","==========================",
                                         "======================", "=============");
-                                System.out.printf("|%5s%5s%5d%5s%14.2f%11s%17d%3s%17.2f  |\n", informal, " |", qtdInformal, " |", valorInformal,
-                                                " |", TAXALIXO, " |", 0000.00);
+                                System.out.printf("|%5s%5s%5d%5s%14.2f%11s%17d%3s%17s  |\n", informal, " |", qtdInformal, " |", valorInformal,
+                                                " |", TAXALIXO, " |", mt.format(222));
                                 System.out.printf("%8s%10s%10s%s%s\n", "==============","===========","==========================",
                                         "======================", "=============");
                                 System.out.println("\n");
                                 break;
                             case 3:
-                                System.out.println("=== SEMI-INFORMAL ===");
+                                System.out.println("\t=== SEMI-INFORMAL ===");
                                 System.out.printf("\n%8s%10s%10s%s%s\n", "==============","===========","==========================",
                                         "======================", "=============");
                                 System.out.printf("%-10s%-10s%-25s%-20s%-19s |\n", "| Mercado","| Qde","| Valor por Unidade","| Taxa de Lixo", "| Valor Total");
                                 System.out.printf("%8s%10s%10s%s%s\n", "==============","===========","==========================",
                                         "======================", "=============");
-                                System.out.printf("|%5s%5s%5d%5s%14.2f%11s%17d%3s%17.2f  |\n", semiInformal, " |", qtdSemiInformal, " |", taxaSemiInformal,
-                                                " |", TAXALIXO, " |", 0000.00);
+                                System.out.printf("|%5s%5s%5d%5s%14.2f%11s%17d%3s%17s  |\n", semiInformal, " |", qtdSemiInformal, " |", taxaSemiInformal,
+                                                " |", TAXALIXO, " |", mt.format(15));
                                 System.out.printf("%8s%10s%10s%s%s\n", "==============","===========","==========================",
                                         "======================", "=============");
                                 System.out.println("\n");
