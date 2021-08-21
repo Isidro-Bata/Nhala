@@ -1,10 +1,14 @@
 package nhala;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.text.DecimalFormat;
 
-import java.io.*;
 
 public class Kendze {
     public static void main(String []args) throws IOException {
         BufferedReader ler = new BufferedReader(new InputStreamReader(System.in));
+        DecimalFormat mt = new DecimalFormat("###,###,###.00 MT");
         byte op, op1;
         
         char formal = 'F';
@@ -35,7 +39,7 @@ public class Kendze {
             System.out.println("2. Visualizar Dados de Mercados.");
             System.out.println("3. Relatorio");
             System.out.println("0. Sair");
-            System.out.println("Opcao: ");
+            System.out.print("Opcao: ");
             do {
                 op = Byte.parseByte(ler.readLine());
                 
@@ -50,7 +54,7 @@ public class Kendze {
                     System.out.println("2. Mercado Informal");
                     System.out.println("3. Mercado Semi-Informal");
                     System.out.println("0. Sair");
-                    System.out.println("Opcao: ");
+                    System.out.print("Opcao: ");
                     do {
                         op1 = Byte.parseByte(ler.readLine());
 
@@ -82,11 +86,11 @@ public class Kendze {
                         break;
                         case 2:
                             
-                            System.out.println("Informe a Qtd. de vendedores: ");
+                            System.out.print("Informe a Qtd. de vendedores: ");
                             do {
                                 qtdInformal = Short.parseShort(ler.readLine());
                                 if(qtdInformal < 0 || qtdInformal > 32768)
-                                    System.out.println("Informe correctamente a opcao.");
+                                    System.out.println("Informe correctamente a quantidade.");
                                 
                             }while(qtdInformal < 0 || qtdInformal > 32768);
                         
@@ -94,7 +98,7 @@ public class Kendze {
                             do {
                                 valorInformal = Float.parseFloat(ler.readLine());
                                 if(valorInformal < 0.0f)
-                                    System.out.println("Informe correctamente a opcao.");
+                                    System.out.println("Informe correctamente o valor a ser pago.");
                                 
                             }while(valorInformal < 0.0f);
                             
@@ -156,34 +160,34 @@ public class Kendze {
                                 System.out.printf("%-10s%-10s%-25s%-20s%-19s |\n", "| Mercado","| Qde","| Valor por Unidade","| Taxa de Lixo", "| Valor Total");
                                 System.out.printf("%8s%10s%10s%s%s\n", "==============","===========","==========================",
                                         "======================", "=============");
-                                System.out.printf("|%5s%5s%5d%5s%14.2f%11s%17d%3s%17.2f  |\n", formal, " |", qtdFormal, " |", rendaFormal,
-                                                " |", TAXALIXO, " |", totalFormal);
+                                System.out.printf("|%5s%5s%5d%5s%14s%11s%17s%3s%17s  |\n", formal, " |", qtdFormal, " |", mt.format(rendaFormal),
+                                                " |", mt.format(TAXALIXO), " |", mt.format(totalFormal));
                                 System.out.printf("%8s%10s%10s%s%s\n", "==============","===========","==========================",
                                         "======================", "=============");
                                 System.out.println("\n");
                                 break;
                             case 2:
-                                System.out.println("=== INFORMAL ===");
+                                System.out.println("\t=== INFORMAL ===");
                                 System.out.printf("\n%8s%10s%10s%s%s\n", "==============","===========","==========================",
                                         "======================", "=============");
                                 System.out.printf("%-10s%-10s%-25s%-20s%-19s |\n", "| Mercado","| Qde","| Valor por Unidade","| Taxa de Lixo", "| Valor Total");
                                 System.out.printf("%8s%10s%10s%s%s\n", "==============","===========","==========================",
                                         "======================", "=============");
-                                System.out.printf("|%5s%5s%5d%5s%14.2f%11s%17d%3s%17.2f  |\n", informal, " |", qtdInformal, " |", valorInformal,
-                                                " |", TAXALIXO, " |", totalInformal);
+                                System.out.printf("|%5s%5s%5d%5s%14s%11s%17s%3s%17s  |\n", informal, " |", qtdInformal, " |", mt.format(valorInformal),
+                                                " |", mt.format(TAXALIXO), " |", mt.format(totalInformal));
                                 System.out.printf("%8s%10s%10s%s%s\n", "==============","===========","==========================",
                                         "======================", "=============");
                                 System.out.println("\n");
                                 break;
                             case 3:
-                                System.out.println("=== SEMI-INFORMAL ===");
+                                System.out.println("\t=== SEMI-INFORMAL ===");
                                 System.out.printf("\n%8s%10s%10s%s%s\n", "==============","===========","==========================",
                                         "======================", "=============");
                                 System.out.printf("%-10s%-10s%-25s%-20s%-19s |\n", "| Mercado","| Qde","| Valor por Unidade","| Taxa de Lixo", "| Valor Total");
                                 System.out.printf("%8s%10s%10s%s%s\n", "==============","===========","==========================",
                                         "======================", "=============");
-                                System.out.printf("|%5s%5s%5d%5s%14.2f%11s%17d%3s%17.2f  |\n", semiInformal, " |", qtdSemiInformal, " |", taxaSemiInformal,
-                                                " |", TAXALIXO, " |", totalSemiInformal);
+                                System.out.printf("|%5s%5s%5d%5s%14s%11s%17s%3s%17s  |\n", semiInformal, " |", qtdSemiInformal, " |", mt.format(taxaSemiInformal),
+                                                " |", mt.format(TAXALIXO), " |", mt.format(totalSemiInformal));
                                 System.out.printf("%8s%10s%10s%s%s\n", "==============","===========","==========================",
                                         "======================", "=============");
                                 System.out.println("\n");
@@ -193,10 +197,10 @@ public class Kendze {
                 case 3:
                     System.out.println("");
                     System.out.println("Relatorio\n");
-                    System.out.println("Quantidade total de Vendedores: " + totalVendedores);
-                    System.out.println("Total ganho por dia: " + total);
-                    System.out.println("Total de Lixo obitdo: " + totalLixo);
-                    System.out.println("IVA total: " + IVA);
+                    System.out.println("Quantidade total de Vendedores: " + mt.format(totalVendedores));
+                    System.out.println("Total ganho por dia: " + mt.format(total));
+                    System.out.println("Total de Lixo obitdo: " + mt.format(totalLixo));
+                    System.out.println("IVA total: " + mt.format(IVA));
                     if(total*30 > 100000){
                         System.out.println("A gestao encontra-se em Lucro");
                     }else {
