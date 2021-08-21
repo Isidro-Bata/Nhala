@@ -144,7 +144,7 @@ public class Kendze {
                         System.out.println("2. Mercado Informal");
                         System.out.println("3. Mercado Semi-Informal");
                         System.out.println("0. Sair");
-                        System.out.println("Opcao: ");
+                        System.out.print("Opcao: ");
                         do {
                             op1 = Byte.parseByte(ler.readLine());
 
